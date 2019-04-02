@@ -91,10 +91,17 @@ public class RefreshLoadActivity extends AppCompatActivity implements RefreshRec
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.id_action_gridview:
-                mRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+                if(mRecyclerView.getLayoutManager() instanceof GridLayoutManager){
+                    mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+                }else{
+                    mRecyclerView.setLayoutManager(new GridLayoutManager(this, 4));
+
+
+                }
+
                 break;
             case R.id.id_action_listview:
-                mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
                 break;
         }
         return true;

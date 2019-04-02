@@ -61,8 +61,7 @@ public abstract class CommonRecyclerAdapter<T> extends RecyclerView.Adapter<View
         // 先inflate数据
         View itemView = mInflater.inflate(mLayoutId, parent, false);
         // 返回ViewHolder
-        ViewHolder holder = new ViewHolder(itemView);
-        return holder;
+        return new ViewHolder(itemView);
     }
 
     @Override

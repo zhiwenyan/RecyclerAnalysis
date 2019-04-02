@@ -132,7 +132,7 @@ public class DragItemAnimatorActivity extends AppCompatActivity {
             public void clearView(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
                 // 正常默认状态下背景恢复默认
                 viewHolder.itemView.setBackgroundColor(0);
-                ViewCompat.setTranslationX(viewHolder.itemView,0);
+                ViewCompat.setTranslationX(viewHolder.itemView, 0);
             }
         });
         // 这个就不多解释了，就这么attach

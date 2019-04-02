@@ -182,16 +182,16 @@ public class RefreshRecyclerView extends WrapRecyclerView {
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         super.onLayout(changed, l, t, r, b);
-        //if (changed) {
-        if (mRefreshView != null && mRefreshViewHeight <= 0) {
-            // 获取头部刷新View的高度
-            mRefreshViewHeight = mRefreshView.getMeasuredHeight();
-            if (mRefreshViewHeight > 0) {
-                // 隐藏头部刷新的View  marginTop  多留出1px防止无法判断是不是滚动到头部问题
-                setRefreshViewMarginTop(-mRefreshViewHeight + 1);
+        if (changed) {
+            if (mRefreshView != null && mRefreshViewHeight <= 0) {
+                // 获取头部刷新View的高度
+                mRefreshViewHeight = mRefreshView.getMeasuredHeight();
+                if (mRefreshViewHeight > 0) {
+                    // 隐藏头部刷新的View  marginTop  多留出1px防止无法判断是不是滚动到头部问题
+                    setRefreshViewMarginTop(-mRefreshViewHeight + 1);
+                }
             }
         }
-        // }
     }
 
     /**

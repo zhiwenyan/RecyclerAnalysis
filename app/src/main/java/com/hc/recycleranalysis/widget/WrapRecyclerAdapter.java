@@ -2,6 +2,7 @@ package com.hc.recycleranalysis.widget;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
@@ -118,12 +119,19 @@ public class WrapRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             return mHeaderViews.keyAt(position);
         }
         if (isFooterPosition(position)) {
+            Log.i(TAG, "isFooterPosition1: " + position);
             // 直接返回position位置的key
             position = position - mHeaderViews.size() - mAdapter.getItemCount();
+            Log.i(TAG, "isFooterPosition2: " + position);
+
             return mFooterViews.keyAt(position);
         }
+        Log.i(TAG, "getItemViewType1: " + position);
+
         // 返回列表Adapter的getItemViewType
         position = position - mHeaderViews.size();
+        Log.i(TAG, "getItemViewType2: " + position);
+
         return mAdapter.getItemViewType(position);
     }
 

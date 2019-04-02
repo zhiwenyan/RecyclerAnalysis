@@ -77,7 +77,6 @@ public class DividerGridItemDecoration extends ItemDecoration {
         int bottom = mDivider.getIntrinsicHeight();
 
         int position = ((LayoutParams) view.getLayoutParams()).getViewLayoutPosition();
-
         if (isLastColumn(position, parent)) {// 是否是最后一列
             right = 0;
         }
@@ -110,7 +109,7 @@ public class DividerGridItemDecoration extends ItemDecoration {
 
         int rowNumber = childCount % spanCount == 0 ? childCount / spanCount : (childCount / spanCount) + 1;
 
-        if (itemPosition > ((rowNumber - 1) * spanCount - 1)) {
+        if (itemPosition > ((rowNumber - 1) * spanCount)) {
             return true;
         }
 

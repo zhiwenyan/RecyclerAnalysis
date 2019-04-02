@@ -5,6 +5,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.LayoutManager;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.View;
 
 /**
  * @author Darren
@@ -86,12 +87,11 @@ public class RecyclerGridSpaceDecoration extends RecyclerView.ItemDecoration {
         return false;
     }
 
-
     @Override
-    public void getItemOffsets(Rect outRect, int itemPosition,
-                               RecyclerView parent) {
+    public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+        super.getItemOffsets(outRect, view, parent, state);
         int spanCount = getSpanCount(parent);
-
+        int itemPosition = parent.getChildAdapterPosition(view);
         int childCount = parent.getAdapter().getItemCount();
         if (isLastRaw(parent, itemPosition, spanCount, childCount))// 如果是最后一行，则不需要绘制底部
         {

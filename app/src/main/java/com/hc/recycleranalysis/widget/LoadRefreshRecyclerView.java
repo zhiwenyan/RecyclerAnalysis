@@ -15,6 +15,7 @@ import android.view.View;
  * Description: 下拉刷新上拉加载更多的RecyclerView
  */
 public class LoadRefreshRecyclerView extends RefreshRecyclerView {
+    private static final String TAG = LoadRefreshRecyclerView.class.getSimpleName();
     // 上拉加载更多的辅助类
     private LoadViewCreator mLoadCreator;
     // 上拉加载更多头部的高度
